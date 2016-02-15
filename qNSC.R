@@ -9,4 +9,9 @@ clures <- hclust(dist(data))
 cluster <- cutree(clures,0.05*nrow(data))
 aggdata <- aggregate(data,list(cluster),mean)
 aggdata <- aggdata[,-1]
-neuralwaterfallorder <- pseudotimeprog.foo(aggdata,color="black")
+#waterfall
+neuralwaterfallorder <- pseudotimeprog.foo(aggdata,color="black") 
+
+#kmeans
+neuralkmeans <- exprkmeans(aggdata)
+neuralkmeansorder <- TSCANorder(neuralkmeans)

@@ -19,4 +19,9 @@ clures <- hclust(dist(data))
 cluster <- cutree(clures,0.05*nrow(data))
 aggdata <- aggregate(data,list(cluster),mean)
 aggdata <- aggdata[,-1]
-LPSwaterfallorder <- pseudotimeprog.foo(aggdata,color="black")
+#waterfall
+LPSwaterfallorder <- pseudotimeprog.foo(aggdata,color="black") 
+
+#kmeans
+LPSkmeans <- exprkmeans(aggdata)
+LPSkmeansorder <- TSCANorder(LPSkmeans)
