@@ -2,7 +2,7 @@ exprkmeans <- function(data, clusternum = NULL, reduce = T) {
       if (reduce) {
             sdev <- prcomp(t(data),scale=T)$sdev[1:20]
             x <- 1:20
-            optpoint <- which.min(sapply(2:10, function(i) {
+            optpoint <- which.min(sapply(2:19, function(i) {
                   x2 <- pmax(0,x-i)
                   sum(lm(sdev~x+x2)$residuals^2)
             }))
