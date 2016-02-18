@@ -1,5 +1,4 @@
 TSCAN Example Datasets
-====
 
 This repository contains three example datasets for TSCAN: HSMM dataset without prior differential gene expression information; HSMM dataset with prior differential gene expression information; and LPS dataset. NOTE: all data have been log transformed. DO NOT enable log transformation in the GUI if you wish to reproduce the results in the paper.
 
@@ -24,3 +23,4 @@ qNSC_Y.txt: The Y matrix of qNSC dataset.
 qNSC_E.txt: The E matrix of qNSC dataset.
 
 qNSC.R: R code to run waterfall and kmeans analysis on qNSC dataset.
+
