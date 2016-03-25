@@ -18,3 +18,8 @@ HSMMwaterfallorder <- pseudotimeprog.foo(aggdata,color="black")
 #kmeans
 HSMMkmeans <- exprkmeans(aggdata)
 HSMMkmeansorder <- TSCANorder(HSMMkmeans)
+
+#Scuba
+fitpc <- principal.curve(t(aggdata), smoother = "lowess", maxit = 200)
+HSMMscubaorder <- colnames(aggdata)[order(fitpc$lambda)]
+

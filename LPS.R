@@ -25,3 +25,8 @@ LPSwaterfallorder <- pseudotimeprog.foo(aggdata,color="black")
 #kmeans
 LPSkmeans <- exprkmeans(aggdata)
 LPSkmeansorder <- TSCANorder(LPSkmeans)
+
+#Scuba
+fitpc <- principal.curve(t(aggdata), smoother = "lowess", maxit = 200)
+LPSscubaorder <- colnames(aggdata)[order(fitpc$lambda)]
+

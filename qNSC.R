@@ -15,3 +15,7 @@ neuralwaterfallorder <- pseudotimeprog.foo(aggdata,color="black")
 #kmeans
 neuralkmeans <- exprkmeans(aggdata)
 neuralkmeansorder <- TSCANorder(neuralkmeans)
+
+#Scuba
+fitpc <- principal.curve(t(aggdata), smoother = "lowess", maxit = 200)
+neuralscubaorder <- colnames(aggdata)[order(fitpc$lambda)]
